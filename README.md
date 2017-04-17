@@ -10,4 +10,7 @@ or in Docker:
 	dotnet publish
 	cp Dockerfile bin/Debug/netcoreapp1.1/publish
 	docker build bin/Debug/netcoreapp1.1/publish -t performance_extractor
-	
+	docker-compose up
+
+While making sure that you modify the mount point for the log files you want to analyze.
+
