@@ -1,15 +1,16 @@
 ﻿<Properties StartupConfiguration="{567F7D3B-1BE4-44DC-8685-175985020591}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="wwwroot/js/index.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="performance_extractor Status">
     <Files>
       <File FileName="Program.cs" Line="1" Column="1" />
       <File FileName="Configuration/EntrySource.cs" Line="6" Column="26" />
       <File FileName="Startup.cs" Line="40" Column="4" />
-      <File FileName="Controllers/PerformanceCounterController.cs" Line="33" Column="5" />
+      <File FileName="Controllers/PerformanceCounterController.cs" Line="45" Column="4" />
       <File FileName="Models/LogEntry.cs" Line="10" Column="36" />
-      <File FileName="Models/PerformanceCounterModel.cs" Line="10" Column="35" />
-      <File FileName="Parsing/PerformanceCounterParser.cs" Line="50" Column="32" />
-      <File FileName="wwwroot/index.html" Line="9" Column="9" />
-      <File FileName="wwwroot/js/index.js" Line="1" Column="14" />
+      <File FileName="Models/PerformanceCounterModel.cs" Line="10" Column="21" />
+      <File FileName="Parsing/PerformanceCounterParser.cs" Line="51" Column="4" />
+      <File FileName="wwwroot/index.html" Line="13" Column="31" />
+      <File FileName="wwwroot/js/index.js" Line="88" Column="2" />
+      <File FileName="performance_extractor Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
