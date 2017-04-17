@@ -49,7 +49,10 @@ namespace performance_extractor
 				}
 			}).Where(o => o.Success).ToDictionary(o => o.Name, o => o.TimeMs);
 
-			// "Total" key has to exist by definition of first Regex
+			if (!splitDict.ContainsKey("Total")) {
+				return null; // can't parse then
+			}
+
 			int totalMs = splitDict["Total"];
 			splitDict.Remove("Total");
 
