@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{567F7D3B-1BE4-44DC-8685-175985020591}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="performance_extractor Status">
+    <Files>
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="Configuration/EntrySource.cs" Line="6" Column="26" />
+      <File FileName="Startup.cs" Line="32" Column="73" />
+      <File FileName="Controllers/PerformanceCounterController.cs" Line="20" Column="24" />
+      <File FileName="performance_extractor Status" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.performance__extractor PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
