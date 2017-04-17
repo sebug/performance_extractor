@@ -1,0 +1,13 @@
+version: '2'
+services:
+  loganalyzer:
+    image: "loganalyzer"
+    volumes:
+    - /Users/sgfeller/Documents/log_exploration/data:/mnt/logs
+  performance_extractor:
+    image: "performance_extractor"
+    ports:
+    - "4998:80"
+    environment:
+    - 'EntrySource:GetUrlTemplate=http://loganalyzer/api/LogEntry?start={start}'
+
