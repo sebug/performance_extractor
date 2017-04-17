@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{567F7D3B-1BE4-44DC-8685-175985020591}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="performance_extractor Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/PerformanceCounterController.cs">
     <Files>
       <File FileName="Program.cs" Line="1" Column="1" />
       <File FileName="Configuration/EntrySource.cs" Line="6" Column="26" />
       <File FileName="Startup.cs" Line="32" Column="73" />
-      <File FileName="Controllers/PerformanceCounterController.cs" Line="20" Column="24" />
+      <File FileName="Controllers/PerformanceCounterController.cs" Line="30" Column="13" />
       <File FileName="performance_extractor Status" />
+      <File FileName="Models/LogEntry.cs" Line="10" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

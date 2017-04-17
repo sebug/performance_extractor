@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace performance_extractor.Controllers
 {
@@ -17,9 +19,19 @@ namespace performance_extractor.Controllers
 			this._optionsAccessor = optionsAccessor;
 		}
 
-		public string Get(int start = 0)
+		public async Task<IEnumerable<LogEntryModel>> Get(int start = 0)
 		{
-			return this._optionsAccessor.Value.GetUrlTemplate;
+			var uri = new Uri(
+				this._optionsAccessor.Value.GetUrlTemplate.Replace("{start}", start.ToString()));
+			using (var client = new HttpClient())
+			{
+				string resultString = await client.GetStringAsync(
+					this._optionsAccessor.Value.GetUrlTemplate.Replace("{start}", start.ToString()));
+
+				var entries = JsonConvert.DeserializeObject<List<LogEntryModel>>(resultString);
+
+				return entries.Where(le => le.Severity.StartsWith("Information", StringComparison.CurrentCultureIgnoreCase));
+			}
 		}
 	}
 }
