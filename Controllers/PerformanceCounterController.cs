@@ -31,7 +31,12 @@ namespace performance_extractor.Controllers
 
 				var entries = JsonConvert.DeserializeObject<List<LogEntryModel>>(resultString);
 
-				var informationOnly = entries.Where(le => le.Severity.StartsWith("Information", StringComparison.CurrentCultureIgnoreCase));
+				if (entries == null)
+				{
+					return Enumerable.Empty<PerformanceCounterModel>();
+				}
+
+				var informationOnly = entries.Where(le => le.Severity != null && le.Severity.StartsWith("Information", StringComparison.CurrentCultureIgnoreCase));
 
 				var parsed = informationOnly.Select(parser.Parse).ToList();
 
