@@ -85,7 +85,7 @@ $(document).ready(function () {
 	for (i = 0; i < maxStart; i += 100) {
 		promises.push(getEntries(commonList, i, commonBucket, i + 100, progressBarCallback));
 	}
-	'
+
 	$.when.apply($, promises).then(function () {
 		console.log(commonBucket);
 	});
