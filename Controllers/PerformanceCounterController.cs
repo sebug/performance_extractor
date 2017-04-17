@@ -19,10 +19,11 @@ namespace performance_extractor.Controllers
 			this._optionsAccessor = optionsAccessor;
 		}
 
-		public async Task<IEnumerable<LogEntryModel>> Get(int start = 0)
+		public async Task<IEnumerable<PerformanceCounterModel>> Get(int start = 0)
 		{
 			var uri = new Uri(
 				this._optionsAccessor.Value.GetUrlTemplate.Replace("{start}", start.ToString()));
+			var parser = new PerformanceCounterParser();
 			using (var client = new HttpClient())
 			{
 				string resultString = await client.GetStringAsync(
@@ -30,7 +31,11 @@ namespace performance_extractor.Controllers
 
 				var entries = JsonConvert.DeserializeObject<List<LogEntryModel>>(resultString);
 
-				return entries.Where(le => le.Severity.StartsWith("Information", StringComparison.CurrentCultureIgnoreCase));
+				var informationOnly = entries.Where(le => le.Severity.StartsWith("Information", StringComparison.CurrentCultureIgnoreCase));
+
+				var parsed = informationOnly.Select(parser.Parse).ToList();
+
+				return parsed.Where(pcm => pcm != null);
 			}
 		}
 	}
